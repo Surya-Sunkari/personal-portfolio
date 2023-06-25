@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroImage from "../assets/img_for_website.jpg";
+import headshot from "../assets/headshot.jpg";
 import {MdOutlineKeyboardArrowRight} from 'react-icons/md'
 import { Link } from 'react-scroll'
 import {TypeAnimation} from 'react-type-animation'
@@ -29,7 +29,7 @@ const Home = ({nav}) => {
               </motion.div>
             </div>
             <motion.div variants={fadeIn('left', 0.3)} initial="hidden" whileInView={'show'} viewport={{once: false, amount: 0.7}}>
-              <img src={HeroImage} alt="my profile" className=' rounded-[50%] mx-auto w-4/5'/>
+              <img src={headshot} alt="my profile" className=' rounded-[50%] mx-auto w-4/5'/>
             </motion.div>
 
           </div>

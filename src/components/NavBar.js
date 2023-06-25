@@ -1,6 +1,7 @@
 import React from 'react'
 import {FaBars, FaTimes} from 'react-icons/fa'
 import { Link } from "react-scroll";
+import logo from '../assets/logo.png'
 
 
 const NavBar = ({nav, setNav}) => {
@@ -35,7 +36,10 @@ const NavBar = ({nav, setNav}) => {
   return (
     <div className='flex justify-between items-center w-full h-20 bg-gradient-to-b from-black via-black to-transparent px-4 text-white fixed z-40'>
         <div>
-            <h1 className='text-5xl font-signature ml-2'>SS</h1>
+            {/* <h1 className='text-5xl font-signature ml-2'>SS</h1> */}
+            <Link to='home' smooth duration={500}>
+                <img src={logo} alt='Logo' width={100} height={100} className=' pt-5 cursor-pointer hover:scale-110 duration-300' />
+            </Link>
         </div>
         <ul className='hidden md:flex justify-center items-center'>
             {links.map(({id, link}) => {

@@ -2,14 +2,14 @@ import React from 'react'
 import { fadeIn } from './variants';
 import {motion} from 'framer-motion'
 import MyCarousel from "./MyCarousel"
-import css from "../assets/css.png";
-import html from "../assets/html.png";
-import javascript from "../assets/javascript.png";
-import react from "../assets/react.png";
-import tailwind from "../assets/tailwind.png";
-import java from "../assets/java.png";
-import python from "../assets/python.png";
-import php from "../assets/php.png";
+import css from "../assets/skills/css.png";
+import html from "../assets/skills/html.png";
+import javascript from "../assets/skills/javascript.png";
+import react from "../assets/skills/react.png";
+import tailwind from "../assets/skills/tailwind.png";
+import java from "../assets/skills/java.png";
+import python from "../assets/skills/python.png";
+import php from "../assets/skills/php.png";
 
 
 const About = () => {
