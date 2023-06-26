@@ -63,13 +63,13 @@ const Portfolio = () => {
                             <h2 className=' text-xl text-center font-bold mt-2'>{name}</h2>
                             <div className='flex items-center justify-around py-2'>
                                 <a href={demo} target='_blank' rel='noreferrer'>
-                                    <button className='w-1/2 px-1 py-1 my-1 mx-2 duration-200 hover:text-yellow-200 hover:scale-110'>Demo</button>
+                                    {demo!=="" && <button className='px-1 py-1 my-1 mx-2 duration-200 hover:text-yellow-200 hover:scale-110'>Demo</button>}
                                 </a>
                                 <a href={paper} download={paper_name} target='_blank' rel='noreferrer'>
                                     {paper!=="" && <button className=' px-1 py-1 my-1 mx-2 duration-200 hover:text-yellow-200 hover:scale-110'>Paper</button>}
                                 </a>
                                 <a href={code} target='_blank' rel='noreferrer'>
-                                    <button className='w-1/2 px-1 py-1 my-1 mx-2 duration-200 hover:text-yellow-200 hover:scale-110'>Code</button>
+                                   {code!=="" && <button className=' px-1 py-1 my-1 mx-2 duration-200 hover:text-yellow-200 hover:scale-110'>Code</button>}
                                 </a>                            
                             </div>
                         </motion.div>  
