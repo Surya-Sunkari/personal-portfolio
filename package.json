@@ -2,7 +2,7 @@
   "name": "personal-portfolio-react-tailwind",
   "version": "0.1.0",
   "private": true,
-  "homepage": "suryasunkari.com",
+  "homepage": "https://Surya-Sunkari.github.io/personal-portfolio",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
