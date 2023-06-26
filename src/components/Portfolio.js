@@ -53,12 +53,12 @@ const Portfolio = () => {
     <>
         <div className='w-full bg-black text-white md:h-screen pt-80 md:pt-36 pb-20 mb-60'>
             <div name='portfolio' className='max-w-screen-lg p-4 mx-auto flex flex-col justify-center items-center w-full h-full pt-20 md:pt-80 '>
-                <motion.div variants={fadeIn('down', 0.3)} initial="hidden" whileInView={'show'} viewport={{once: false, amount: 0.7}} className='pb-8'>
+                <motion.div variants={fadeIn('down', 0.3)} initial="hidden" whileInView={'show'} viewport={{once: true, amount: 0.7}} className='pb-8'>
                     <p className='text-4xl font-bold inline p-2 pt-3 rounded-xl bg-white text-black z-50'>Portfolio</p>
                 </motion.div>
                 <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0'> 
                     {portfolios.map(({id, src, name, demo, code, paper, paper_name}) => (
-                        <motion.div variants={fadeIn('left', 0.3)} initial="hidden" whileInView={'show'} viewport={{once: false, amount: 0.7}} key={id} className='shadow-md shadow-gray-500 rounded-lg'>
+                        <motion.div variants={fadeIn('left', 0.3)} initial="hidden" whileInView={'show'} viewport={{once: true, amount: 0.7}} key={id} className='shadow-md shadow-gray-500 rounded-lg'>
                             <img src={src} alt="" className='rounded-md duration-200 h-44 w-full object-fill'/>
                             <h2 className=' text-xl text-center font-bold mt-2'>{name}</h2>
                             <div className='flex justify-evenly py-2'>
