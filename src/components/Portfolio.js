@@ -14,7 +14,7 @@ const Portfolio = () => {
             id: 1,
             src:plannAHG,
             name: "Toyota BWI Bot Task Planner",
-            demo: "",
+            demo: "https://youtu.be/gsMDuAPTgdo",
             code: "https://github.com/qyuo/PlannAHG",
             paper: "/PlannA-HG_paper.pdf",
             paper_name: "PlannA-HG_paper",
@@ -61,16 +61,26 @@ const Portfolio = () => {
                         <motion.div variants={fadeIn('left', 0.3)} initial="hidden" whileInView={'show'} viewport={{once: false, amount: 0.7}} key={id} className='shadow-md shadow-gray-500 rounded-lg'>
                             <img src={src} alt="" className='rounded-md duration-200 h-44 w-full object-fill'/>
                             <h2 className=' text-xl text-center font-bold mt-2'>{name}</h2>
-                            <div className='flex items-center justify-around py-2'>
-                                <a href={demo} target='_blank' rel='noreferrer'>
-                                    {demo!=="" && <button className='px-1 py-1 my-1 mx-2 duration-200 hover:text-yellow-200 hover:scale-110'>Demo</button>}
-                                </a>
-                                <a href={paper} download={paper_name} target='_blank' rel='noreferrer'>
-                                    {paper!=="" && <button className=' px-1 py-1 my-1 mx-2 duration-200 hover:text-yellow-200 hover:scale-110'>Paper</button>}
-                                </a>
-                                <a href={code} target='_blank' rel='noreferrer'>
-                                   {code!=="" && <button className=' px-1 py-1 my-1 mx-2 duration-200 hover:text-yellow-200 hover:scale-110'>Code</button>}
-                                </a>                            
+                            <div className='flex justify-evenly py-2'>
+
+                                {demo!=="" && 
+                                    <a href={demo} target='_blank' rel='noreferrer'>
+                                        <button className='px-1 py-1 my-1 mx-2 duration-200 hover:text-yellow-200 hover:scale-110'>Demo</button>
+                                    </a>
+                                }
+                                
+                                {code!=="" &&
+                                    <a href={code} target='_blank' rel='noreferrer'>
+                                        <button className='px-1 py-1 my-1 mx-2 duration-200 hover:text-yellow-200 hover:scale-110'>Code</button>
+                                    </a> 
+                                }        
+
+                                {paper!=="" && 
+                                    <a href={paper} download={paper_name} target='_blank' rel='noreferrer'>
+                                        <button className='px-1 py-1 my-1 mx-2 duration-200 hover:text-yellow-200 hover:scale-110'>Paper</button>
+                                    </a>
+                                }
+
                             </div>
                         </motion.div>  
                     ))}
