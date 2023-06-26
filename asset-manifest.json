@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/personal-portfolio/static/css/main.b7ec9929.css",
-    "main.js": "/personal-portfolio/static/js/main.2c2725b6.js",
-    "static/media/headshot.jpg": "/personal-portfolio/static/media/headshot.bcbc53ac12153a49348e.jpg",
-    "static/media/python.png": "/personal-portfolio/static/media/python.dea924d737bb84eb9ce3.png",
-    "static/media/social_network.jpg": "/personal-portfolio/static/media/social_network.c3c3f0488f20ecba3004.jpg",
-    "static/media/neural_network.jpg": "/personal-portfolio/static/media/neural_network.b7fbe4b566d5c5aa7e85.jpg",
-    "static/media/php.png": "/personal-portfolio/static/media/php.9e4fe8e6c56ca39a9427.png",
-    "static/media/logo.png": "/personal-portfolio/static/media/logo.1efe49f801c72947dfc2.png",
-    "static/media/react.png": "/personal-portfolio/static/media/react.0cf951a69d8e58f83f9d.png",
-    "static/media/bwi_bot.jpeg": "/personal-portfolio/static/media/bwi_bot.13bd24fd81935827db28.jpeg",
-    "static/media/html.png": "/personal-portfolio/static/media/html.2ba4fabc69a89a8f71e6.png",
-    "static/media/tailwind.png": "/personal-portfolio/static/media/tailwind.e47ac876b8d4d0bba47a.png",
-    "static/media/java.png": "/personal-portfolio/static/media/java.f5dd86c3ef6ef3f85acf.png",
-    "static/media/css.png": "/personal-portfolio/static/media/css.69a82c2d9e45c933a9cb.png",
-    "static/media/javascript.png": "/personal-portfolio/static/media/javascript.1ccd6ef9bb1f9c84ef00.png",
-    "index.html": "/personal-portfolio/index.html",
-    "main.b7ec9929.css.map": "/personal-portfolio/static/css/main.b7ec9929.css.map",
-    "main.2c2725b6.js.map": "/personal-portfolio/static/js/main.2c2725b6.js.map"
+    "main.css": "/suryasunkari.com/static/css/main.b7ec9929.css",
+    "main.js": "/suryasunkari.com/static/js/main.1b28fe57.js",
+    "static/media/headshot.jpg": "/suryasunkari.com/static/media/headshot.bcbc53ac12153a49348e.jpg",
+    "static/media/python.png": "/suryasunkari.com/static/media/python.dea924d737bb84eb9ce3.png",
+    "static/media/social_network.jpg": "/suryasunkari.com/static/media/social_network.c3c3f0488f20ecba3004.jpg",
+    "static/media/neural_network.jpg": "/suryasunkari.com/static/media/neural_network.b7fbe4b566d5c5aa7e85.jpg",
+    "static/media/php.png": "/suryasunkari.com/static/media/php.9e4fe8e6c56ca39a9427.png",
+    "static/media/logo.png": "/suryasunkari.com/static/media/logo.1efe49f801c72947dfc2.png",
+    "static/media/react.png": "/suryasunkari.com/static/media/react.0cf951a69d8e58f83f9d.png",
+    "static/media/bwi_bot.jpeg": "/suryasunkari.com/static/media/bwi_bot.13bd24fd81935827db28.jpeg",
+    "static/media/html.png": "/suryasunkari.com/static/media/html.2ba4fabc69a89a8f71e6.png",
+    "static/media/tailwind.png": "/suryasunkari.com/static/media/tailwind.e47ac876b8d4d0bba47a.png",
+    "static/media/java.png": "/suryasunkari.com/static/media/java.f5dd86c3ef6ef3f85acf.png",
+    "static/media/css.png": "/suryasunkari.com/static/media/css.69a82c2d9e45c933a9cb.png",
+    "static/media/javascript.png": "/suryasunkari.com/static/media/javascript.1ccd6ef9bb1f9c84ef00.png",
+    "index.html": "/suryasunkari.com/index.html",
+    "main.b7ec9929.css.map": "/suryasunkari.com/static/css/main.b7ec9929.css.map",
+    "main.1b28fe57.js.map": "/suryasunkari.com/static/js/main.1b28fe57.js.map"
   },
   "entrypoints": [
     "static/css/main.b7ec9929.css",
-    "static/js/main.2c2725b6.js"
+    "static/js/main.1b28fe57.js"
   ]
 }
