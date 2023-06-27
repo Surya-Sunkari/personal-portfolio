@@ -1,5 +1,5 @@
 import React from 'react'
-import headshot from "../assets/headshot.jpg";
+import headshot from "../assets/picofme.jpg";
 import {MdOutlineKeyboardArrowRight} from 'react-icons/md'
 import { Link } from 'react-scroll'
 import {TypeAnimation} from 'react-type-animation'
