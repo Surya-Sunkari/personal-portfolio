@@ -1,13 +1,45 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import plannAHG from "../assets/portfolio/bwi_bot.jpeg";
 import neural_net from "../assets/portfolio/neural_network.jpg";
 import txb_raffle from "../assets/portfolio/blockchain.png";
 import social_network from "../assets/portfolio/social_network.jpg";
 import { fadeIn } from './variants';
 import {motion} from 'framer-motion'
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import Fade from '@mui/material/Fade';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 
 
 const Portfolio = () => {
+
+    const [open, setOpen] = useState(false);
+    const [modalInfo, setModalInfo] = useState({});
+    const [width, setWidth] = useState(window.innerWidth);
+    const [isMobile, setIsMobile] = useState(true);
+
+    function handleWindowSizeChange() {
+        setWidth(window.innerWidth);
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, []);
+
+    useEffect(() => {
+        setIsMobile(width <= 768);
+    }, [width]);
+
+    const handleOpen = (id) => {
+        setModalInfo(portfolios[id-1]);
+        setOpen(true);
+    }
+    const handleClose = () => setOpen(false);
 
     const portfolios = [
         {
@@ -52,29 +84,77 @@ const Portfolio = () => {
   return (
     <>
         <div className='w-full bg-black text-white md:h-screen pt-80 md:pt-36 pb-20 mb-60'>
-            <div name='portfolio' className='max-w-screen-lg p-4 mx-auto flex flex-col justify-center items-center w-full h-full pt-20 md:pt-80 '>
+            <div name='portfolio' className='max-w-screen-lg p-4 mx-auto flex flex-col justify-center items-center w-full h-full pt-20 md:pt-80'>
                 <motion.div variants={fadeIn('down', 0.3)} initial="hidden" whileInView={'show'} viewport={{once: false, amount: 0.7}} className='pb-8'>
                     <p className='text-4xl font-bold inline p-2 pt-3 rounded-xl bg-white text-black z-50'>Portfolio</p>
                 </motion.div>
-                <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0'> 
-                    {portfolios.map(({id, src, name, demo, code, paper, paper_name}) => (
+                {(isMobile) ?
+                    (
+                    <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0'> 
+                        {portfolios.map(({id, src, name, demo, code, paper, paper_name}) => (
+                            <motion.div variants={fadeIn('left', 0.3)} initial="hidden" whileInView={'show'} viewport={{once: false, amount: 0.7}} key={id} className='shadow-md shadow-gray-500 rounded-lg'>
+                                <img src={src} alt="" className='rounded-md duration-200 h-44 w-full object-fill'/>
+                                <h2 className=' text-xl text-center font-bold mt-2'>{name}</h2>
+                                <div className='flex justify-evenly py-2'>
+                                    {demo!=="" && 
+                                        <a href={demo} target='_blank' rel='noreferrer'>
+                                            <button className='px-1 py-1 my-1 mx-2 duration-200 hover:text-yellow-200 hover:scale-110'>Demo</button>
+                                        </a>
+                                    }
+                                    {code!=="" &&
+                                        <a href={code} target='_blank' rel='noreferrer'>
+                                            <button className='px-1 py-1 my-1 mx-2 duration-200 hover:text-yellow-200 hover:scale-110'>Code</button>
+                                        </a> 
+                                    }        
+                                    {paper!=="" && 
+                                        <a href={paper} download={paper_name} target='_blank' rel='noreferrer'>
+                                            <button className='px-1 py-1 my-1 mx-2 duration-200 hover:text-yellow-200 hover:scale-110'>Paper</button>
+                                        </a>
+                                    }
+                                </div>
+                            </motion.div>  
+                        ))}
+                    </div>
+                    ) : (
+                    <div className='hidden md:grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0'> 
+                    {portfolios.map(({id, src, name}) => (
                         <motion.div variants={fadeIn('left', 0.3)} initial="hidden" whileInView={'show'} viewport={{once: false, amount: 0.7}} key={id} className='shadow-md shadow-gray-500 rounded-lg'>
-                            <img src={src} alt="" className='rounded-md duration-200 h-44 w-full object-fill'/>
-                            <h2 className=' text-xl text-center font-bold mt-2'>{name}</h2>
-                            <div className='flex items-center justify-around py-2'>
-                                <a href={demo} target='_blank' rel='noreferrer'>
-                                    {demo!=="" && <button className='px-1 py-1 my-1 mx-2 duration-200 hover:text-yellow-200 hover:scale-110'>Demo</button>}
-                                </a>
-                                <a href={paper} download={paper_name} target='_blank' rel='noreferrer'>
-                                    {paper!=="" && <button className=' px-1 py-1 my-1 mx-2 duration-200 hover:text-yellow-200 hover:scale-110'>Paper</button>}
-                                </a>
-                                <a href={code} target='_blank' rel='noreferrer'>
-                                   {code!=="" && <button className=' px-1 py-1 my-1 mx-2 duration-200 hover:text-yellow-200 hover:scale-110'>Code</button>}
-                                </a>                            
+                            <div onClick={() => handleOpen(id)} className=' cursor-pointer'>
+                                <img src={src} alt="" className='rounded-md duration-200 h-44 w-full object-fill'/>
+                                <h2 className=' text-xl text-center font-bold mt-2'>{name}</h2>
                             </div>
+                            <Modal
+                                aria-labelledby="transition-modal-title"
+                                aria-describedby="transition-modal-description"
+                                open={open}
+                                onClose={handleClose}
+                                closeAfterTransition
+                                slotProps={{
+                                backdrop: {
+                                    timeout: 500,
+                                },
+                                }}
+                            >
+                                <Fade in={open}>
+                                    <Box className=' absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-7/12 h-3/5 
+                                                    flex  items-center flex-col bg-slate-500 rounded-md'>
+                                        <h1 className=' text-4xl text-white font-bold p-8 m-8 pb-4 mb-4'>{modalInfo.name}</h1>
+                                        <Typography id="transition-modal-description" sx={{ mt: 2 }} className=' text-green-600'>
+                                        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                                        </Typography>
+                                        <Stack direction="row" spacing={2}>
+                                            {modalInfo.demo!=="" && <Button href={modalInfo.demo} variant="contained">Demo</Button>}
+                                            {modalInfo.code!=="" && <Button href={modalInfo.code} variant="contained">Code</Button>}
+                                            {modalInfo.paper!=="" && <Button href={modalInfo.paper} variant="contained">Paper</Button>}
+                                        </Stack>
+                                    </Box>
+                                </Fade>
+                            </Modal>
                         </motion.div>  
                     ))}
                 </div>
+                )
+                }
             </div>
         </div>
     </>
