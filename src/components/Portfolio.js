@@ -5,18 +5,12 @@ import txb_raffle from "../assets/portfolio/blockchain.png";
 import social_network from "../assets/portfolio/social_network.jpg";
 import { fadeIn } from './variants';
 import {motion} from 'framer-motion'
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
+import PortfolioCard from './PortfolioCard';
+import PortfolioCardMobile from './PortfolioCardMobile';
 
 
 const Portfolio = () => {
 
-    const [open, setOpen] = useState(false);
-    const [modalInfo, setModalInfo] = useState({});
     const [width, setWidth] = useState(window.innerWidth);
     const [isMobile, setIsMobile] = useState(true);
 
@@ -35,18 +29,14 @@ const Portfolio = () => {
         setIsMobile(width <= 768);
     }, [width]);
 
-    const handleOpen = (id) => {
-        setModalInfo(portfolios[id-1]);
-        setOpen(true);
-    }
-    const handleClose = () => setOpen(false);
-
+    // id*, src*, name*, desc*, demo, code, paper, paper_name, 
     const portfolios = [
         {
             id: 1,
             src:plannAHG,
             name: "Toyota BWI Bot Task Planner",
-            demo: "",
+            desc: "Ullamco incididunt adipisicing nulla velit deserunt do magna Lorem. Adipisicing mollit aliquip ullamco cillum esse et aliquip aliquip labore labore aliquip. Consectetur elit in eiusmod sunt mollit quis sint qui proident ad.",
+            demo: "https://youtu.be/gsMDuAPTgdo",
             code: "https://github.com/qyuo/PlannAHG",
             paper: "/PlannA-HG_paper.pdf",
             paper_name: "PlannA-HG_paper",
@@ -55,28 +45,22 @@ const Portfolio = () => {
             id: 2,
             src:neural_net,
             name: "Hardcoded Neural Network",
-            demo: "",
+            desc: "Ullamco incididunt adipisicing nulla velit deserunt do magna Lorem. Adipisicing mollit aliquip ullamco cillum esse et aliquip aliquip labore labore aliquip. Consectetur elit in eiusmod sunt mollit quis sint qui proident ad.",
             code: "https://github.com/Surya-Sunkari/neural-networks",
-            paper: "",
-            paper_name: "",
         },
         {
             id: 3,
             src:txb_raffle,
             name: "NFT Raffle",
-            demo: "",
+            desc: "Ullamco incididunt adipisicing nulla velit deserunt do magna Lorem. Adipisicing mollit aliquip ullamco cillum esse et aliquip aliquip labore labore aliquip. Consectetur elit in eiusmod sunt mollit quis sint qui proident ad.",
             code: "https://github.com/Surya-Sunkari/TxB-Raffle-SO",
-            paper: "",
-            paper_name: "",
         },
         {
             id: 4,
             src:social_network,
             name: "\"Unsocial\" Network",
-            demo: "",
+            desc: "Ullamco incididunt adipisicing nulla velit deserunt do magna Lorem. Adipisicing mollit aliquip ullamco cillum esse et aliquip aliquip labore labore aliquip. Consectetur elit in eiusmod sunt mollit quis sint qui proident ad.",
             code: "https://github.com/Surya-Sunkari/unsocial-network",
-            paper: "",
-            paper_name: "",
         },
     ]
 
@@ -93,65 +77,17 @@ const Portfolio = () => {
                     <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0'> 
                         {portfolios.map(({id, src, name, demo, code, paper, paper_name}) => (
                             <motion.div variants={fadeIn('left', 0.3)} initial="hidden" whileInView={'show'} viewport={{once: false, amount: 0.7}} key={id} className='shadow-md shadow-gray-500 rounded-lg'>
-                                <img src={src} alt="" className='rounded-md duration-200 h-44 w-full object-fill'/>
-                                <h2 className=' text-xl text-center font-bold mt-2'>{name}</h2>
-                                <div className='flex justify-evenly py-2'>
-                                    {demo!=="" && 
-                                        <a href={demo} target='_blank' rel='noreferrer'>
-                                            <button className='px-1 py-1 my-1 mx-2 duration-200 hover:text-yellow-200 hover:scale-110'>Demo</button>
-                                        </a>
-                                    }
-                                    {code!=="" &&
-                                        <a href={code} target='_blank' rel='noreferrer'>
-                                            <button className='px-1 py-1 my-1 mx-2 duration-200 hover:text-yellow-200 hover:scale-110'>Code</button>
-                                        </a> 
-                                    }        
-                                    {paper!=="" && 
-                                        <a href={paper} download={paper_name} target='_blank' rel='noreferrer'>
-                                            <button className='px-1 py-1 my-1 mx-2 duration-200 hover:text-yellow-200 hover:scale-110'>Paper</button>
-                                        </a>
-                                    }
-                                </div>
+                                <PortfolioCardMobile src={src} name={name} demo={demo} code={code} paper={paper} paper_name={paper_name} />
                             </motion.div>  
                         ))}
                     </div>
                     ) : (
                     <div className='hidden md:grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0'> 
-                    {portfolios.map(({id, src, name}) => (
-                        <motion.div variants={fadeIn('left', 0.3)} initial="hidden" whileInView={'show'} viewport={{once: false, amount: 0.7}} key={id} className='shadow-md shadow-gray-500 rounded-lg'>
-                            <div onClick={() => handleOpen(id)} className=' cursor-pointer'>
-                                <img src={src} alt="" className='rounded-md duration-200 h-44 w-full object-fill'/>
-                                <h2 className=' text-xl text-center font-bold mt-2'>{name}</h2>
-                            </div>
-                            <Modal
-                                aria-labelledby="transition-modal-title"
-                                aria-describedby="transition-modal-description"
-                                open={open}
-                                onClose={handleClose}
-                                closeAfterTransition
-                                slotProps={{
-                                backdrop: {
-                                    timeout: 500,
-                                },
-                                }}
-                            >
-                                <Fade in={open}>
-                                    <Box className=' absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-7/12 h-3/5 
-                                                    flex  items-center flex-col bg-slate-500 rounded-md'>
-                                        <h1 className=' text-4xl text-white font-bold p-8 m-8 pb-4 mb-4'>{modalInfo.name}</h1>
-                                        <Typography id="transition-modal-description" sx={{ mt: 2 }} className=' text-green-600'>
-                                        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                                        </Typography>
-                                        <Stack direction="row" spacing={2}>
-                                            {modalInfo.demo!=="" && <Button href={modalInfo.demo} variant="contained">Demo</Button>}
-                                            {modalInfo.code!=="" && <Button href={modalInfo.code} variant="contained">Code</Button>}
-                                            {modalInfo.paper!=="" && <Button href={modalInfo.paper} variant="contained">Paper</Button>}
-                                        </Stack>
-                                    </Box>
-                                </Fade>
-                            </Modal>
-                        </motion.div>  
-                    ))}
+                        {portfolios.map(({id, src, name}) => (
+                            <motion.div variants={fadeIn('left', 0.3)} initial="hidden" whileInView={'show'} viewport={{once: false, amount: 0.7}} key={id} className='shadow-md shadow-gray-500 rounded-lg'>
+                                <PortfolioCard portfolios={portfolios} src={src} id={id} name={name} />
+                            </motion.div>  
+                        ))}
                 </div>
                 )
                 }
