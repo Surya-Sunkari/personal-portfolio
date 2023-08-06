@@ -38,7 +38,7 @@ const NavBar = ({nav, setNav}) => {
         <div>
             {/* <h1 className='text-5xl font-signature ml-2'>SS</h1> */}
             <Link to='home' smooth duration={500}>
-                <img src={logo} alt='Logo' width={100} height={100} className=' pt-5 cursor-pointer hover:scale-110 duration-300' />
+                <img src={logo} alt='Logo' width={100} height={100} className=' pt-5 cursor-pointer hover:scale-125 duration-300' />
             </Link>
         </div>
         <ul className='hidden md:flex justify-center items-center'>

@@ -1,5 +1,5 @@
 import React from 'react'
-import {FaGithub, FaLinkedin} from "react-icons/fa";
+import {FaGithub, FaLinkedin, FaInstagram} from "react-icons/fa";
 import {HiOutlineMail} from "react-icons/hi";
 import {BsPersonLinesFill} from "react-icons/bs"
 
@@ -29,13 +29,22 @@ const SocialLinks = () => {
             id: 3,
             child: (
                 <>
+                    Instagram <FaInstagram size={30}/>
+                </>
+            ),
+            href: 'https://www.instagram.com/surya_sunk/',
+        },
+        {
+            id: 4,
+            child: (
+                <>
                     Mail <HiOutlineMail size={30}/>
                 </>
             ),
             href: 'mailto:suryasunkari@gmail.com',
         },
         {
-            id: 4,
+            id: 5,
             child: (
                 <>
                     Resume <BsPersonLinesFill size={30}/>
