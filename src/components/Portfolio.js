@@ -3,6 +3,7 @@ import plannAHG from "../assets/portfolio/bwi_bot.jpeg";
 import neural_net from "../assets/portfolio/neural_network.jpg";
 import txb_raffle from "../assets/portfolio/blockchain.png";
 import social_network from "../assets/portfolio/social_network.jpg";
+import spotify_clone from "../assets/portfolio/spotify_clone.png"
 import { fadeIn } from './variants';
 import {motion} from 'framer-motion'
 import PortfolioCard from './PortfolioCard';
@@ -39,23 +40,30 @@ const Portfolio = () => {
             demo: "https://youtu.be/gsMDuAPTgdo",
             paper: "/PlannA-HG_paper.pdf",
             paper_name: "PlannA-HG_paper",
+        },{
+            id: 2,
+            src:spotify_clone,
+            name: "Spotify Clone",
+            desc: "In this project, I created a comprehensive music streaming application using Next.js, React, Tailwind CSS, Supabase, and PostgreSQL. This project was my first attempt at creating a full stack application without any partners or team members, so I was forced into an environment in which I had to learn everything from setup to deployment. This appliaction mirrors Spotify's key features, offering user experiences such as file and image upload, secure credential authentication, audio playback, a favorite songs system, as well as server error handling. This project showcases my dedication in learning unfamiliar technologies, as well as my ability to create a fully pollished full stack application.",
+            demo: "https://spotify-clone-surya-sunkari.vercel.app/",
+            code: "https://github.com/Surya-Sunkari/spotify-clone",
         },
         {
-            id: 2,
+            id: 3,
             src:neural_net,
             name: "Hardcoded Neural Network",
             desc: "In this project, I developed a neural network using pure NumPy, abandoning popular machine learning libraries like TensorFlow and PyTorch. The model's objective was to identify handwritten digits (0-9) from 28x28 grayscale images sourced from the MNIST database. To achieve this, I combined knowledge from various fields, including linear algebra, multivariable calculus, and the theory behind neural network implementation. My approach to optimizing the architecture and fine-tuning hyperparameters resulted in an acccuracy of over 90%. This project exemplifies my dedication to delving into the intricacies of AI, showcasing my ability to create powerful solutions from scratch.",
             code: "https://github.com/Surya-Sunkari/neural-networks",
         },
         {
-            id: 3,
+            id: 4,
             src:txb_raffle,
             name: "NFT Raffle",
             desc: "TxB Raffle is an NFT raffling application with ticket purchase/refund and prize disbursement capabilities, ensuring fairness through verifiable random functions (VRFs). Commissioned by Shardeum to TxB Labs (Texas Blockchain's Engineering Cohort at UT Austin), this project enables NFT owners to initiate raffles with custom slots, ticket prices, and dates, while users can easily participate and request refunds. With VRF-based winner selection and efficient prize distribution, the platform guarantees a transparent and rewarding experience. The project also incorporates a 2.5% commission for the contract owner and offers contract ownership transferability.",
             code: "https://github.com/Surya-Sunkari/TxB-Raffle-SO",
         },
         {
-            id: 4,
+            id: 5,
             src:social_network,
             name: "\"Unsocial\" Network",
             desc: "In this personal project, I designed and programmed a dynamic \"Social Network\" application using Java, incorporating file input and output as a database to manage user login information, messaging, account creation, and friend requests, among other functionalities. Through this endeavor, I deepened my understanding of essential programming concepts, such as File I/O, encapsulation, Object-Oriented Programming (OOP), and Graphical User Interface (GUI) design. The project showcases my ability to build practical and functional applications while honing my skills in Java development.",

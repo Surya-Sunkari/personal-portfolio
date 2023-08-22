@@ -15,7 +15,6 @@ function App() {
 
     return(
         <div className="bg-black overflow-x-hidden">
-            {/* <InteractiveBackground /> */}
             <NavBar nav={nav} setNav={setNav}/>
             <Home nav={nav}/>
             <About />
