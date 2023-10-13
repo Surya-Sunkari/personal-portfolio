@@ -36,7 +36,7 @@ const Portfolio = () => {
             id: 1,
             src:plannAHG,
             name: "Toyota BWI Bot Task Planner",
-            desc: "In this project, I developed a Robot Task Planning System along with a team of three other students, utilizing large language models to convert user prompts into action plans with a 90% success rate. The system comprises a Planner Agent for plan generation and a Conversation Agent for user interaction through voice input and output. Real-world experiments demonstrated its effectiveness in generating valid action plans and natural language interaction. This project required an expertise in Python, LLMs, Mathematics, UI/UX, and team collaboration, emphasizing my passion for innovative AI solutions and reliable autonomous robots.",
+            desc: "During my time there, I worked with a team to develop a novel robotics platform, called Dobby, that seamlessly combines multi-step task planning with fluent, human-like conversation. Our system consists of a single AI agent, derived from a large language model, which is responsible for generating dialogue and interfacing with the physical world by invoking commands. With its unprecedented communication abilities, Dobby presents exciting opportunities for enhancing human-robot-interaction and increasing the flexibility of service robots. I plan to continue developing the project this summer by incorporating novel algorithms into Dobby's planning strategies, to enable it to be able to do much more complex tasks.",
             demo: "https://youtu.be/gsMDuAPTgdo",
             paper: "/PlannA-HG_paper.pdf",
             paper_name: "PlannA-HG_paper",
