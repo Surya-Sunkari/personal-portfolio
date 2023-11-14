@@ -4,6 +4,7 @@ import neural_net from "../assets/portfolio/neural_network.jpg";
 import txb_raffle from "../assets/portfolio/blockchain.png";
 import social_network from "../assets/portfolio/social_network.jpg";
 import spotify_clone from "../assets/portfolio/spotify_clone.png"
+import expense_tracker from "../assets/portfolio/expense_tracker.jpg"
 import { fadeIn } from './variants';
 import {motion} from 'framer-motion'
 import PortfolioCard from './PortfolioCard';
@@ -44,26 +45,33 @@ const Portfolio = () => {
             id: 2,
             src:spotify_clone,
             name: "Spotify Clone",
-            desc: "In this project, I created a comprehensive music streaming application using Next.js, React, Tailwind CSS, Supabase, and PostgreSQL. This project was my first attempt at creating a full stack application without any partners or team members, so I was forced into an environment in which I had to learn everything from setup to deployment. This appliaction mirrors Spotify's key features, offering user experiences such as file and image upload, secure credential authentication, audio playback, a favorite songs system, as well as server error handling. This project showcases my dedication in learning unfamiliar technologies, as well as my ability to create a fully pollished full stack application.",
+            desc: "In this project, I created a comprehensive music streaming application using Next.js, React, Tailwind CSS, Supabase, and PostgreSQL. This project was my first attempt at creating a full stack application without any partners or team members, so I was forced into an environment in which I had to learn everything from setup to deployment. This application mirrors Spotify's key features, offering user experiences such as file and image upload, secure credential authentication, audio playback, a favorite songs system, as well as server error handling. This project showcases my dedication in learning unfamiliar technologies, as well as my ability to create a fully polished full stack application.",
             demo: "https://spotify-clone-surya-sunkari.vercel.app/",
             code: "https://github.com/Surya-Sunkari/spotify-clone",
         },
         {
             id: 3,
+            src: expense_tracker,
+            name: "Expense and Investment Tracker",
+            desc: "Developed an AI-driven expense and investment tracker at HackTX 2023. Utilized Next.js, Flask, Tailwind CSS, and MongoDB to create a unified solution for managing personal finances. Implemented CRUD operations for seamless expense management and integrated OpenAI's GPT-3.5 API for AI-driven financial advising. Incorporated web scraping to provide users with recent news articles related to their investment holdings. This project demonstrates my agility in leveraging diverse technologies to address real-world financial challenges in a hackathon setting, as well as my ability to work with an unfamiliar tech stack to create a production ready full-stack application.",
+            code: "https://github.com/Surya-Sunkari/personal-finance-tracker",
+        },
+        {
+            id: 4,
             src:neural_net,
             name: "Hardcoded Neural Network",
             desc: "In this project, I developed a neural network using pure NumPy, abandoning popular machine learning libraries like TensorFlow and PyTorch. The model's objective was to identify handwritten digits (0-9) from 28x28 grayscale images sourced from the MNIST database. To achieve this, I combined knowledge from various fields, including linear algebra, multivariable calculus, and the theory behind neural network implementation. My approach to optimizing the architecture and fine-tuning hyperparameters resulted in an acccuracy of over 90%. This project exemplifies my dedication to delving into the intricacies of AI, showcasing my ability to create powerful solutions from scratch.",
             code: "https://github.com/Surya-Sunkari/neural-networks",
         },
         {
-            id: 4,
+            id: 5,
             src:txb_raffle,
             name: "NFT Raffle",
             desc: "TxB Raffle is an NFT raffling application with ticket purchase/refund and prize disbursement capabilities, ensuring fairness through verifiable random functions (VRFs). Commissioned by Shardeum to TxB Labs (Texas Blockchain's Engineering Cohort at UT Austin), this project enables NFT owners to initiate raffles with custom slots, ticket prices, and dates, while users can easily participate and request refunds. With VRF-based winner selection and efficient prize distribution, the platform guarantees a transparent and rewarding experience. The project also incorporates a 2.5% commission for the contract owner and offers contract ownership transferability.",
             code: "https://github.com/Surya-Sunkari/TxB-Raffle-SO",
         },
         {
-            id: 5,
+            id: 6,
             src:social_network,
             name: "\"Unsocial\" Network",
             desc: "In this personal project, I designed and programmed a dynamic \"Social Network\" application using Java, incorporating file input and output as a database to manage user login information, messaging, account creation, and friend requests, among other functionalities. Through this endeavor, I deepened my understanding of essential programming concepts, such as File I/O, encapsulation, Object-Oriented Programming (OOP), and Graphical User Interface (GUI) design. The project showcases my ability to build practical and functional applications while honing my skills in Java development.",
@@ -92,10 +100,10 @@ const Portfolio = () => {
                     <div className='hidden md:grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0'> 
                         {portfolios.map(({id, src, name}) => (
                             <motion.div variants={fadeIn('left', 0.3)} initial="hidden" whileInView={'show'} viewport={{once: false, amount: 0.7}} key={id} className='shadow-md shadow-gray-500 rounded-lg'>
-                                <PortfolioCard portfolios={portfolios} src={src} id={id} name={name} />
+                                <PortfolioCard portfolios={portfolios} src={src} id={id} name={name}/>
                             </motion.div>  
                         ))}
-                </div>
+                    </div>
                 )
                 }
             </div>
